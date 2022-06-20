@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Create:A.N. Abdul Rahman,Dicoding Academy 2022,Website Bookself Apps" />
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="https://kit.fontawesome.com/47a37cf9ee.js" crossorigin="anonymous"></script>
+	<title>Bookself Apps</title>
+</head>
+
+<body>
+	<header>
+		<div class="jumbroton" id="particles-js">
+			<div class="heading_jumbroton">
+				<h1 class="heading_title">Bookself Apps</h1>
+			</div>
+		</div>
+		<nav>
+			<div class="logo">
+				<p class="title-logo">
+					<i class="fa-solid fa-book"></i>Bookself Apps
+				</p>
+			</div>
+
+			<ul>
+				<li><a href="#">Home</a></li>
+			</ul>
+
+			<div class="menu-toggle">
+				<input type="checkbox" />
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+			<section id="search">
+				<form id="BookSearch">
+					<h2 class="title_search">Search Your Books</h2>
+					<div class="search-container">
+						<i class="fa-solid fa-magnifying-glass"></i>
+						<input type="text" name="search" placeholder="Search Books" id="searchBookInput" />
+						<button id="searchBtn" type="submit">Search</button>
+					</div>
+				</form>
+			</section>
+			<section id="add_book">
+				<div class="input-book">
+					<h2>Add New Books</h2>
+					<form id="inputBooks">
+						<div class="inputBook">
+							<label for="inputBookTitle">Title</label>
+							<input type="text" required placeholder="The Alchemist" id="inputBookTitle" />
+						</div>
+						<div class="inputBook">
+							<label for="inputAuthorTitle">Author</label>
+							<input type="text" required placeholder="Paulo Coelho" id="inputAuthorTitle" />
+						</div>
+						<div class="inputBook">
+							<label for="inputYearTitle">Year</label>
+							<input type="number" required placeholder="1988" id="inputYearTitle" />
+						</div>
+						<button id="bookBtn" type="submit">
+							<i class="fa-solid fa-plus"></i> Save
+						</button>
+					</form>
+				</div>
+			</section>
+			<section id="uncompletedBook">
+				<div class="uncompletedBook">
+					<h2 class="uncompletedRead">Uncompleted Reading</h2>
+
+					<div class="uncompletedBookList">
+
+					</div>
+				</div>
+			</section>
+			<section id="completedBook">
+				<div class="completedBook">
+					<h2 class="CompletedRead">Completed Reading</h2>
+
+					<div class="completedBookList">
+
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<footer>
+		<p class="footer-p">
+			Submission Front-End Web &copy;Dicoding 2022.Develop by abdulrahman
+			<i class="fas fa-heart"></i>
+		</p>
+	</footer>
+	<script src="particles.js-master/particles.js"></script>
+	<script src="particles.js-master/demo/js/app.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>
