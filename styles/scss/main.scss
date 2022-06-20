@@ -1,0 +1,482 @@
+// Variable SASS
+$primaryColor : #1a1b24;
+$secondaryColor : #282B38;
+$tersierColor : #3e4253;
+$primaryTextColor : #fff;
+$secondaryTextColor : #b5bdd6;
+
+// End Of Variable
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&display=swap');
+
+// end of Fonts
+// sweetalert custom
+.swal-button {
+    background-color: #00CC8F;
+}
+
+.swal-button:not([disabled]):hover {
+    background-color: #00CC8F;
+    opacity: 0.6;
+    color: $primaryTextColor;
+}
+
+.swal-button--cancel {
+    background-color: #efefef;
+}
+
+.swal-button--danger {
+    background-color: #e64942;
+}
+
+// end of custom sweetalert
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+header {
+    display: inline;
+
+    #particles-js {
+        background: $primaryColor;
+        height: 30vh;
+        margin: 0 auto;
+        padding-bottom: 2em;
+
+        .heading_jumbroton {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            top: 10%;
+
+            h1 {
+                color: $primaryTextColor;
+                font-size: 3em;
+            }
+        }
+    }
+
+    nav {
+        display: flex;
+        background-color: $secondaryColor;
+        justify-content: space-between;
+        padding: 0 2em;
+        height: 50px;
+        align-items: center;
+        position: sticky;
+        top: 0;
+
+        .logo {
+            .title-logo {
+                font-size: 1em;
+                color: $primaryTextColor;
+
+                i {
+                    margin-right: .3em;
+                }
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                a {
+                    text-decoration: none;
+                    font-weight: bold;
+                    color: $primaryTextColor;
+                    font-size: 0.9em;
+
+                    &:hover {
+                        color: $secondaryTextColor;
+                    }
+                }
+            }
+        }
+
+        /* Hamburger */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            height: 20px;
+            justify-content: space-between;
+            position: relative;
+
+            input {
+                position: absolute;
+                width: 40px;
+                height: 28px;
+                left: -6px;
+                top: -3px;
+                opacity: 0;
+                z-index: 2;
+                cursor: pointer;
+
+            }
+
+            span {
+                display: block;
+                width: 28px;
+                height: 3px;
+                background-color: white;
+                border-radius: 3px;
+                transition: all 0.5s;
+            }
+        }
+    }
+}
+
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+    transform: scale(0);
+    opacity: 0;
+}
+
+/* Kontent Styles */
+.container {
+    background-color: $primaryColor;
+    display: grid;
+    padding: 3em;
+    gap: 0 2em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "search search search search"
+        "inputBook inputBook inputBook inputBook"
+        "uncompleted-book uncompleted-book completed-book completed-book"
+        "uncompleted-book uncompleted-book completed-book completed-book"
+    ;
+
+    .title_search {
+        color: $secondaryTextColor;
+        margin-bottom: .4em;
+        font-size: 1.8em;
+    }
+
+
+    .search-container {
+        margin: 0 1.2em;
+        border: 2px solid $tersierColor;
+        border-radius: 10px;
+        padding: 5px 7px 5px 5px;
+        width: 80%;
+        display: flex;
+
+        justify-content: space-between;
+        background-color: $tersierColor;
+
+
+        #searchBookInput {
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            background-color: $secondaryColor;
+            border: none;
+            margin-left: 1em;
+            padding: 12px 16px;
+            color: $primaryTextColor;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 10px;
+
+            &:hover {
+                background-color: $primaryColor;
+            }
+        }
+    }
+
+    .fa-magnifying-glass {
+        color: #c9c5c5;
+
+        padding: 7px;
+    }
+
+    .input-book {
+        background-color: $tersierColor;
+        padding: .8em 1.5em;
+        margin-top: 2em;
+        border-radius: 10px;
+        box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.2);
+        border: 0;
+
+        h2 {
+            color: $primaryTextColor;
+            font-size: 1.8em;
+            margin-bottom: .5em;
+        }
+
+        input {
+            margin: .6em 0;
+            padding: .8em .8em;
+            width: 100%;
+            outline: none;
+            border: 2px solid #bbb;
+            border-radius: 15px;
+            display: inline-block;
+            transition: 0.3s ease all;
+
+            &:focus {
+                border-color: #00CC8F;
+            }
+        }
+
+        button {
+            background-color: #00CC8F;
+            width: 100%;
+            margin-top: .9em;
+            padding: .6em .6em;
+            outline: none;
+            border-radius: 8px;
+            border: none;
+            font-size: 1em;
+            font-weight: 600;
+            color: $primaryTextColor;
+            cursor: pointer;
+            transition: 0.3 ease all;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+
+        label {
+            color: $primaryTextColor;
+        }
+    }
+
+    .uncompletedBook,
+    .completedBook {
+        width: 90%;
+        margin: 0 auto;
+        background-color: $tersierColor;
+        margin-top: 1.5em;
+        padding: .8em 1.5em;
+        border-radius: 10px;
+        box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.2);
+
+        .uncompletedBookList,
+        .completedBookList {
+            background-color: $primaryColor;
+            margin-top: .8em;
+            padding: 1em;
+            border-radius: 8px;
+
+            h3,
+            h4 {
+                color: $primaryTextColor;
+
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            h4 {
+                margin-top: .4em;
+                font-size: 1em;
+                font-weight: 500;
+            }
+
+            .container-books {
+                border: 1px solid $secondaryTextColor;
+                padding: 1em;
+                border-radius: 10px;
+                box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.2);
+                margin-top: .8em;
+
+                button {
+                    margin-top: .8em;
+                    color: $primaryTextColor;
+                    padding: .6em;
+                    border-radius: 10px;
+                    transition: 0.2s all;
+                    cursor: pointer;
+                    border: 0;
+                    margin-right: 1em;
+                    text-align: center;
+
+                    &:hover {
+                        opacity: .7;
+                    }
+
+                    i {
+
+                        font-size: 1.5em;
+                    }
+
+                }
+
+                .edit {
+                    background-color: #f0ad4e;
+                }
+
+                .trash {
+                    background-color: #d9534f;
+                }
+
+                .undo {
+                    background-color: #5cb85c;
+                }
+
+                .completed {
+                    background-color: #5bc0de;
+                }
+
+            }
+
+
+
+
+        }
+
+        h2 {
+            color: $primaryTextColor;
+            font-size: 1.8em;
+        }
+    }
+
+    #search {
+        grid-area: search;
+    }
+
+    #add_book {
+        grid-area: inputBook;
+    }
+
+    #uncompletedBook {
+        grid-area: uncompleted-book;
+    }
+
+    #completedBook {
+        grid-area: completed-book;
+    }
+}
+
+footer {
+    background-color: $primaryColor;
+
+    .footer-p {
+        text-align: center;
+        color: $secondaryTextColor;
+        font-weight: 500;
+
+        i {
+            color: #f0484e;
+        }
+    }
+}
+
+/* End Of Kontent */
+
+/* Responsive Breakpoint */
+
+/* Tablet */
+@media screen and (max-width:768px) {
+
+
+    nav {
+        ul {
+            width: 50%;
+        }
+
+    }
+
+}
+
+@media screen and (max-width:568px) {
+    .container {
+        padding: 1.5em;
+        grid-template-areas:
+            'search search search search'
+            'inputBook inputBook inputBook inputBook'
+            'uncompleted-book uncompleted-book uncompleted-book uncompleted-book'
+            'completed-book completed-book completed-book completed-book';
+
+        .input-book {
+            input {
+                width: 90%;
+            }
+        }
+
+        #search {
+            grid-area: search;
+        }
+
+        #add_book {
+            grid-area: inputBook;
+        }
+
+        #uncompletedBook {
+            grid-area: uncompleted-book;
+        }
+
+        #completedBook {
+            grid-area: completed-book;
+        }
+    }
+
+    .menu-toggle {
+        z-index: 99;
+        display: flex !important;
+    }
+
+    header {
+        nav {
+            ul {
+                position: fixed;
+                right: 0;
+                top: 0;
+                flex-direction: column;
+                background-color: $tersierColor;
+                height: 100vh;
+                width: 100%;
+                align-items: center;
+                justify-content: space-evenly;
+                z-index: 2;
+                transform: translateY(-100%);
+                transition: all 1s;
+                opacity: 0;
+
+            }
+
+            .slide {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    }
+}
